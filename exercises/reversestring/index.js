@@ -7,9 +7,9 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 function reverse(str) {
-  debugger;
+  // debugger;
   // '' in (()=>{},'') : Initialize
-  return str.split('').reduce((rev, char) => char + rev, '');
+  return str.split("").reduce((rev, char) => char + rev, "");
 
   /*
   let reversed = '';
@@ -19,6 +19,11 @@ function reverse(str) {
   }
   return reversed;
   */
+  // let reversed = "";
+  // for (let charactor of str) {
+  //   reversed = charactor + reversed;
+  // }
+  // return reversed;
 
   // const arr = str.split('');
   // arr.reverse();
@@ -30,7 +35,8 @@ function reverse(str) {
   //   .join('');
 }
 
-reverse('abcd');
+console.log(reverse("abcd"));
+reverse("abcd");
 
 module.exports = reverse;
 
