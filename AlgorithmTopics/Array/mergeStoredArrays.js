@@ -26,12 +26,11 @@ function mergeSortedArrays(array1, array2) {
   }
   return mergedArray;
 }
-console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
 // [0, 3, 4, 4 ,6, 30, 31]
 
 function mergeSortedArrays2(array1, array2) {
   let retArray = [];
-  const sortedArray = [];
 
   if (array1.length === 0) {
     return array2;
@@ -47,7 +46,10 @@ function mergeSortedArrays2(array1, array2) {
     retArray.push(num);
   }
 
-  return retArray.sort("number");
+  // sort with number. otherwise, sort by strings
+  //   a > bのとき…a - bはプラス、つまりaのほうが後にくるようにソートされる
+  // a < bのとき…a - bはマイナス、つまりaが先にくるようにソートされる
+  return retArray.sort((a, b) => a - b);
 }
-// console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
+console.log(mergeSortedArrays2([0, 3, 4, 31], [4, 6, 30]));
 // [0, 3, 4, 4 ,6, 30, 31]
